@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 35fr 144px 30fr 27fr;
+  grid-template-columns: 35fr 144px 35fr 22fr;
   grid-template-rows: 30fr auto 10fr 20fr 10fr;
 
   height: 100vh;
@@ -172,13 +172,90 @@ export const LittleDot = styled.span`
   display: inline-block;
 `
 
-export const CallToAction = styled.div`
+export const RightContainer = styled.div`
   grid-column: 3 / 4;
   grid-row: 2 / 4;
 
-  background: blue;
   height: 100%;
   width: 100%;
+`
+
+export const RightContent = styled.div`
+  margin-left: 2rem;
+  margin-top: 0px;
+
+  h1 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 40px;
+
+    margin: 0px;
+    margin-bottom: 2rem;
+
+    .blue {
+      color: #3880D6;
+    }
+
+    .red {
+      color: #EF5330;
+    }
+  }
+
+  div {
+    p {
+      color: #8B8B8B;
+      margin: 0;
+      margin-bottom: 8px;
+    }
+
+    div {
+      display: flex;
+      width: 360px;
+
+
+      input {
+        font-family: 'Changa', cursive;
+        font-size: 16px;
+        color: #0a0a0a;
+        flex-grow: 1;
+
+        height: 2rem;
+        margin-right: 16px;
+        padding: 4px 16px;
+
+        border-radius: 8px;
+        border: 1px solid #E3E3E3;
+
+        transition: all .3s ease-out;
+
+        &:hover {
+          border: 1px solid #EF5330;
+          cursor: pointer;
+        }
+
+        &:focus {
+          outline: 1px solid #EF5330;
+        }
+
+      }
+
+      button {
+        background-color: #FDEEEA;
+        border: none;
+        padding: 4px 16px;
+        border-radius: 8px;
+        color: #EF5330;
+
+        transition: all .3s ease-out;
+
+        &:hover {
+          background-color: #EF5330;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 `
 
 export const Footer = styled.footer``
