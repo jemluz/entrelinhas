@@ -1,9 +1,9 @@
 import { ProjectLayout } from "@/layouts/Project";
 
-export default function LittleBlog() {
+export default function IgniteFeed() {
   return (
     <ProjectLayout>
-      <div>Little Blog</div>
+      <div>Ignite Feed</div>
     </ProjectLayout>
   )
 }

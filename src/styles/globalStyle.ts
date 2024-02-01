@@ -26,4 +26,9 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  #__next {
+  /* fix screen background end at 70% of height */
+  height: 100vh;
+}
 `;

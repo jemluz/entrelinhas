@@ -1,4 +1,4 @@
-import { ProjectButtonProps, ShowcaseLayout } from '../../layouts/Showcase'
+import { ShowcaseLayout } from '../../layouts/Showcase'
 import { greenTone } from '../../styles/themes'
 
 const projectsButtons: Array<ProjectButtonProps> = [
