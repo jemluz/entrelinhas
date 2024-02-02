@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  /* font-family: "Changa", sans-serif; */
 
   * {
     margin: 0;
@@ -21,6 +22,10 @@ export const GlobalStyle = createGlobalStyle`
     background: none;
     border: none;
     outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   a {
