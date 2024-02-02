@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { Container } from './styled'
 import { ProjectsNavigation } from './ProjectsNavigation'
 import { Parallax } from './Parallax'
-import { ShowcaseHeader } from '@/components/ShowcaseHeader'
-import { ShowcaseCTA } from '@/components/ShowcaseCTA'
+import { ShowcaseHeader } from '@/components/showcase_header'
+import { ShowcaseCTA } from '@/components/showcase_cta'
 
 export function ShowcaseLayout({
   leftLink,
