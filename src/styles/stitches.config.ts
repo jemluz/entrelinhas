@@ -17,6 +17,7 @@ export const {
   theme: {
     colors: {
       white: '#fff',
+      white100: '#F5F5F5',
       black: '#0A0A0A',
       gray100: '#F2F2F2',
       gray300: '#898989',
@@ -28,6 +29,15 @@ export const {
       green: '#73A66E',
       blue: '#3880D6',
       // Adicione mais cores conforme necessário
+
+      accentBlue: '#41516C',
+      accentYellow: '#FBCA3E',
+      accentRed: '#E24A68',
+      accentDarkBlue: '#1B5F8C',
+      accentTeal: '#4CADAD',
+
+      bgColor: '#F5F5F5',
+      textColor: '#1E1E1E',
     },
     fonts: {
       poppins: 'Poppins, sans-serif',
