@@ -48,79 +48,7 @@ export const lessonsList: ILesson[] = [
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
     color: colors.accentRed,
-    lessonType: lessonTypeEnum.practice,
-  },
-  {
-    id: uuidv4(),
-    title: '',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentDarkBlue,
     lessonType: lessonTypeEnum.theory,
-  },
-  {
-    id: uuidv4(),
-    title: 'Criando repositório',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentTeal,
-    lessonType: lessonTypeEnum.practice,
-  },
-  {
-    id: uuidv4(),
-    title: '',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentDarkBlue,
-    lessonType: lessonTypeEnum.theory,
-  },
-  {
-    id: uuidv4(),
-    title: 'Criando repositório',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentTeal,
-    lessonType: lessonTypeEnum.practice,
-  },
-  {
-    id: uuidv4(),
-    title: '',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentDarkBlue,
-    lessonType: lessonTypeEnum.theory,
-  },
-  {
-    id: uuidv4(),
-    title: 'Criando repositório',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentTeal,
-    lessonType: lessonTypeEnum.practice,
-  },
-  {
-    id: uuidv4(),
-    title: '',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentDarkBlue,
-    lessonType: lessonTypeEnum.theory,
-  },
-  {
-    id: uuidv4(),
-    title: 'Criando repositório',
-    subtitle: 'Some subtitle',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!',
-    color: colors.accentTeal,
-    lessonType: lessonTypeEnum.practice,
   },
   {
     id: uuidv4(),

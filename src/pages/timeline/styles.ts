@@ -6,7 +6,6 @@ export const TimelineContainer = styled('ul', {
   '--line-w': '0.25rem',
 
   display: 'grid',
-  gridTemplateColumns: '0.25rem 1fr',
   gridAutoColumns: 'max-content',
   columnGap: '2rem',
   width: 'min(1440px, 90%)',
@@ -21,16 +20,14 @@ export const TimelineContainer = styled('ul', {
     borderRadius: 'calc(var(--line-w) / 2)',
   },
 
+  // mobile grid
+  gridTemplateColumns: '0.25rem 1fr',
+
   '@media (min-width: 1440px)': {
+    // full screen grid
     gridTemplateColumns: '1fr var(--line-w) 1fr',
     '&::before': {
       gridColumn: 2,
-    },
-    'li:nth-child(odd)': {
-      gridColumn: 1,
-    },
-    'li:nth-child(even)': {
-      gridColumn: 3,
     },
     'li:nth-child(2)': {
       gridRow: '2 / 4',

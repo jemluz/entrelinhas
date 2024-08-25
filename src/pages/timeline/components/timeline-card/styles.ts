@@ -6,13 +6,48 @@ export const TimelineCardContainer = styled('li', {
   '--row-gap': '2rem',
 
   gridColumn: 2,
-  marginInline: 'var(--inlineP)',
   gridRow: 'span 2',
+
   display: 'grid',
   gridTemplateRows: 'min-content min-content min-content',
+
+  marginInline: 'var(--inlineP)',
   marginBottom: 'var(--row-gap)',
   padding: '20px',
   borderRadius: '8px',
+
+  // '@media (min-width: 1440px)': {
+  variants: {
+    side: {
+      left: {
+        '@media (max-width: 1439px)': {
+          // single side (timeline at column 1)
+          gridColumn: 2,
+        },
+
+        '@media (min-width: 1440px)': {
+          // double sides
+          gridColumn: 1,
+        },
+      },
+      right: {
+        '@media (max-width: 1439px)': {
+          // single side (timeline at column 1)
+          gridColumn: 2,
+        },
+
+        '@media (min-width: 1440px)': {
+          // double sides
+          gridColumn: 3,
+        },
+      },
+    },
+  },
+  // },
+
+  defaultVariants: {
+    side: 'left',
+  },
 })
 
 export const ChapterPoint = styled('div', {
@@ -51,8 +86,6 @@ export const ChapterPoint = styled('div', {
   },
 
   '&::after': {
-    width: '2rem',
-    background: '$bgColor',
     border: '0.3rem solid var(--accent-color)',
     borderRadius: '50%',
     top: '50%',
@@ -61,6 +94,11 @@ export const ChapterPoint = styled('div', {
   variants: {
     side: {
       left: {
+        '&::after': {
+          width: '2rem',
+          background: '$bgColor',
+        },
+
         '@media (max-width: 1439px)': {
           // timeline stays left at screen (disable left/practice side contents)
           borderRadius: 'calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2)',
@@ -101,7 +139,9 @@ export const ChapterPoint = styled('div', {
         },
         // circle
         '&::after': {
-          transform: 'translate(0%, -50%)',
+          width: '1rem',
+          background: 'var(--accent-color)',
+          transform: 'translate(-30%, -50%)',
           right: 'calc(100% + var(--col-gap) + var(--line-w) / 2)',
         },
       },

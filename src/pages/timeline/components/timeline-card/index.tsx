@@ -21,11 +21,8 @@ export function TimelineCard({
   columnSide = 'left',
 }: TimelineCardProps) {
   return (
-    <TimelineCardContainer>
-      <ChapterPoint
-        side={columnSide}
-        css={{ '--accent-color': accentColor, side: columnSide }}
-      >
+    <TimelineCardContainer side={columnSide}>
+      <ChapterPoint side={columnSide} css={{ '--accent-color': accentColor }}>
         {date}
       </ChapterPoint>
       <Title>{title}</Title>
