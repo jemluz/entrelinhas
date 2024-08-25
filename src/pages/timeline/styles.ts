@@ -9,7 +9,7 @@ export const TimelineContainer = styled('ul', {
   gridTemplateColumns: '0.25rem 1fr',
   gridAutoColumns: 'max-content',
   columnGap: '2rem',
-  width: 'min(60rem, 90%)',
+  width: 'min(1440px, 90%)',
   listStyle: 'none',
   marginInline: 'auto',
 
@@ -21,7 +21,7 @@ export const TimelineContainer = styled('ul', {
     borderRadius: 'calc(var(--line-w) / 2)',
   },
 
-  '@media (min-width: 40rem)': {
+  '@media (min-width: 1440px)': {
     gridTemplateColumns: '1fr var(--line-w) 1fr',
     '&::before': {
       gridColumn: 2,

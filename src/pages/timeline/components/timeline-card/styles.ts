@@ -29,7 +29,11 @@ export const ChapterPoint = styled('div', {
   fontSize: '1.25rem',
   fontWeight: '700',
 
-  display: 'grid',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  // put polygon in the right position
   placeContent: 'center',
   position: 'relative',
 
@@ -57,24 +61,47 @@ export const ChapterPoint = styled('div', {
   variants: {
     side: {
       left: {
-        borderRadius: '0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0',
-        '&::before': {
-          left: 0,
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
+        '@media (max-width: 1439px)': {
+          // timeline stays left at screen (disable left/practice side contents)
+          borderRadius: 'calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2)',
+          // triangle
+          '&::before': {
+            right: 0,
+            clipPath: 'polygon(0 0, 100% 0, 0 100%)',
+          },
+          // circle
+          '&::after': {
+            transform: 'translate(0%, -50%)',
+            right: 'calc(100% + var(--col-gap) + var(--line-w) / 2)',
+          },
         },
-        '&::after': {
-          transform: 'translate(0%, -50%)',
-          left: 'calc(100% + var(--col-gap) + var(--line-w) / 2)',
+
+        '@media (min-width: 1440px)': {
+          // timeline stays middle at scrren (enable left/practice side contents)
+          borderRadius: '0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0',
+          // triangle
+          '&::before': {
+            left: 0,
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
+          },
+          // circle
+          '&::after': {
+            transform: 'translate(0%, -50%)',
+            left: 'calc(100% + var(--col-gap) + var(--line-w) / 2)',
+          },
         },
       },
       right: {
+        // right(theory) contents is always the same
         borderRadius: 'calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2)',
+        // triangle
         '&::before': {
           right: 0,
           clipPath: 'polygon(0 0, 100% 0, 0 100%)',
         },
+        // circle
         '&::after': {
-          transform: 'translate(00%, -50%)',
+          transform: 'translate(0%, -50%)',
           right: 'calc(100% + var(--col-gap) + var(--line-w) / 2)',
         },
       },
@@ -84,17 +111,6 @@ export const ChapterPoint = styled('div', {
   defaultVariants: {
     side: 'left',
   },
-
-  // '@media (min-width: 40rem)': {
-  //   '&::before': {
-  //     clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
-  //     left: 0,
-  //   },
-  //   '&::after': {
-  //     transform: 'translate(-50%, -50%)',
-  //     left: 'calc(100% + var(--col-gap) + var(--line-w) / 2)',
-  //   },
-  // },
 })
 
 export const Title = styled('div', {
