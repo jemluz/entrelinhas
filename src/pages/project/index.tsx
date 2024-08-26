@@ -1,32 +1,49 @@
 import { useQuery } from '@apollo/client'
 import { ProjectContainer, Title } from './styles'
-import { GET_TEACHER_SHORTENED } from '../../utils/queries'
+import { GET_PROJECT } from '../../utils/queries'
 import client from '../../utils/apolo-client'
 import { Loading } from '../../components/loading'
 import { useEffect, useState } from 'react'
 import { Timeline } from '../timeline'
+import { IGetProject } from '../../utils/queries.types'
+
+interface IProject {
+  id: string
+  name: string
+}
 
 export default function Project() {
-  const { loading, error, data } = useQuery(GET_TEACHER_SHORTENED, { client })
+  const [showLoading, setShowLoading] = useState(true)
+  const [project, setProject] = useState<IProject>()
 
   // if (error) return <p>Error: {error.message}</p>
 
-  const [showLoading, setShowLoading] = useState(true)
+  const {
+    loading: isLoadingProject,
+    error: projectError,
+    data: projectData,
+  } = useQuery<IGetProject>(GET_PROJECT, { client })
 
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false)
     }, 1500)
-  }, [loading, setShowLoading])
+  }, [isLoadingProject, setShowLoading])
 
-  console.log()
+  useEffect(() => {
+    if (projectData) {
+      const { name, id } = projectData.project
+      setProject({ name, id })
+    }
+  }, [projectData])
+
   return (
     <ProjectContainer className="project-page">
       {showLoading ? (
         <Loading />
       ) : (
         <div className="after-loading">
-          <Title>Frontend Artesanal</Title>
+          <Title>{project?.name}</Title>
           <Timeline />
         </div>
       )}
