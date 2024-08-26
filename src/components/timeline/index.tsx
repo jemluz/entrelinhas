@@ -1,5 +1,5 @@
 import { lessonsList, lessonTypeEnum } from '../../utils/lessons'
-import { TimelineCard } from './components/timeline-card'
+import { TimelineCard } from '../timeline-card'
 import { TimelineContainer } from './styles'
 
 export function Timeline() {
@@ -10,13 +10,11 @@ export function Timeline() {
         return (
           <TimelineCard
             key={id}
-            date={title}
-            title={subtitle}
-            description={description}
             accentColor={color}
             columnSide={
               lessonType === lessonTypeEnum.practice ? 'left' : 'right'
             }
+            {...{ title, subtitle, description }}
           />
         )
       })}

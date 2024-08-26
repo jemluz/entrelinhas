@@ -1,4 +1,5 @@
-import { styled } from '../../../../styles/stitches.config'
+import ReactPlayer from 'react-player'
+import { styled } from '../../styles/stitches.config'
 
 // Componentes estilizados usando Stitches
 export const TimelineCardContainer = styled('li', {
@@ -50,7 +51,7 @@ export const TimelineCardContainer = styled('li', {
   },
 })
 
-export const ChapterPoint = styled('div', {
+export const Title = styled('div', {
   '--inlineP': '1.5rem',
   '--dateH': '3rem',
   '--col-gap': '2rem',
@@ -116,7 +117,7 @@ export const ChapterPoint = styled('div', {
 
         '@media (min-width: 1440px)': {
           // timeline stays middle at scrren (enable left/practice side contents)
-          borderRadius: '0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0',
+          borderRadius: '16px calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0',
           // triangle
           '&::before': {
             left: 0,
@@ -131,7 +132,7 @@ export const ChapterPoint = styled('div', {
       },
       right: {
         // right(theory) contents is always the same
-        borderRadius: 'calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2)',
+        borderRadius: 'calc(var(--dateH) / 2) 16px 0 calc(var(--dateH) / 2)',
         // triangle
         '&::before': {
           right: 0,
@@ -153,7 +154,39 @@ export const ChapterPoint = styled('div', {
   },
 })
 
-export const Title = styled('div', {
+export const PlayerStyled = styled(ReactPlayer, {
+  width: '100% important',
+  height: '100% important',
+  aspectRatio: '16/9',
+  borderRadius: '8px',
+
+  padding: '2rem',
+
+  '> div > iframe': {
+    borderRadius: '8px',
+  },
+
+  variants: {
+    side: {
+      left: {
+        // mobile
+        '@media (max-width: 1439px)': {
+          paddingLeft: '0',
+        },
+
+        // desktop
+        '@media (min-width: 1440px)': {
+          paddingRight: '0',
+        },
+      },
+      right: {
+        paddingLeft: '0',
+      },
+    },
+  },
+})
+
+export const Subtitle = styled('div', {
   '--inlineP': '1.5rem',
 
   background: '$bgColor',
@@ -163,19 +196,6 @@ export const Title = styled('div', {
   paddingBlockEnd: '1rem',
   fontWeight: '500',
   overflow: 'hidden',
-
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    width: '90%',
-    height: '0.5rem',
-    background: 'rgba(0, 0, 0, 0.5)',
-    left: '50%',
-    borderRadius: '50%',
-    filter: 'blur(4px)',
-    transform: 'translate(-50%, 50%)',
-    bottom: 'calc(100% + 0.125rem)',
-  },
 })
 
 export const Description = styled('div', {

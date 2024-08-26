@@ -4,8 +4,8 @@ import { GET_PROJECT } from '../../utils/queries'
 import client from '../../utils/apolo-client'
 import { Loading } from '../../components/loading'
 import { useEffect, useState } from 'react'
-import { Timeline } from '../timeline'
 import { IGetProject } from '../../utils/queries.types'
+import { Timeline } from '../../components/timeline'
 
 interface IProject {
   id: string
